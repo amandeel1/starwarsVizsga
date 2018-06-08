@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 style="text-align: center">Űrhajók a Star Wars univerzumban</h1>
+    <table>
+      <thead>
+        <th>Név</th>
+        <th>Modell</th>
+        <th>Utasszám</th>
+        <th>Legénység</th>
+        <th>Tárhely</th>
+        <th>Hossz</th>
+        <th>Végsebesség</th>
+        <th>Gyártó</th>
+        <th>Ár</th>
+      </thead>
+      <tbody>
+        <tr>
+        <td>
+          <input type="text" class="form-control" name="denomination" id="newSpaceshipDenomination" [(ngModel)]="newSpaceship.denomination">
+        </td>
+        <td>
+            <input type="text" class="form-control" name="model" id="newSpaceshipModel" [(ngModel)]="newSpaceship.model">
+        </td>
+        <td>
+          <input type="text" class="form-control" name="passengers" id="newSpaceshipPassengers" [(ngModel)]="newSpaceship.passengers">
+        </td>
+        <td>
+          <input type="text" class="form-control"name="crew" id="newSpaceshipCrew" [(ngModel)]="newSpaceship.crew">
+        </td>
+        <td>
+          <input type="text" class="form-control" name="cargo_capacity" id="newSpaceshipCargoCapacity" [(ngModel)]="newSpaceship.cargo_capacity">
+        </td>
+        <td>
+          <input type="text" class="form-control" name="lengthiness" id="newSpaceshipLengthiness" [(ngModel)]="newSpaceship.lengthiness">
+        </td>
+        <td>
+          <input type="text" class="form-control" name="max_atmosphering_speed" id="newSpaceshipMaxAtmospheringSpeed" [(ngModel)]="newSpaceship.max_atmosphering_speed">
+        </td>
+        <td>
+          <input type="text" class="form-control"  name="manufacturer" id="newSpaceshipManufacturer" [(ngModel)]="newSpaceship.manufacturer">
+        </td>
+        <td>
+          <input type="text" class="form-control" name="cost_in_credits" id="newSpaceshipCostInCredits" [(ngModel)]="newSpaceship.cost_in_credits">
+        </td>
+        <input type="button" class="btn btn-success" value="Új Létrehozás" name="create" id="" (click)="addSpaceShip()">
+      </tr>
+        <tr *ngFor='let spaceship of spaceships'>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.denomination">
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.model">
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.passengers">
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.crew">
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.cargo_capacity">
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.lengthiness">
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.max_atmosphering_speed">
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.manufacturer">
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="spaceship.cost_in_credits">
+          </td>
+          <td>
+            <div class="btn-group">
+              <button type="button" class="btn btn-info" (click)="editSpaceship(spaceship)">Módosít</button>
+              <button type="button" class="btn btn-danger" (click)="removeSpaceship(spaceship)">Töröl</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
